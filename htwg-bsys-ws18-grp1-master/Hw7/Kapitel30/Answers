@@ -1,0 +1,47 @@
+Antworten zur HW7 - Coding
+=================================
+
+Frage 1:
+--------
+Der Code ist verständlich. Das ist die korrekte Lösung von dem Producer/Consumer Problem.
+
+Frage 2:
+--------
+Mit größerem Buffer kann das Program lockerer laufen, da der Consumer unbedingt get() ausführt, nur wenn der Buffer voll ist. num_full variiert von 0 bis 10(Der Werte von dem Buffer).
+
+Frage 3:
+--------
+Wir hatten leider kein Mac.
+
+Frage 4:
+--------
+Ungefähr mehr als 11 Sekunden.
+
+Frage 5:
+--------
+Es macht keinen großen Unterschied.
+
+Frage 6:
+--------
+Auch ungefähr 10 Sekunden.
+
+Frage 7:
+--------
+Ungefähr halbiert die Laufzeit.
+
+Frage 8:
+--------
+Der Code funktioniert korrekt mit einem Consumer und einem Producer.
+
+Frage 9:
+--------
+./main-one-cv-while.c -l 3 -p 1 -c 2 -m 1 -P 0,0,0,0,0,0,1
+
+Frage 5:
+--------
+Der Code funktioniert korrekt mit einem Consumer und einem Producer.
+Problem mit mehr als 2 Consumer:
+./main-two-cvs-if.c. -l 3 -p 1 -c 2 -m 1 -C 0,0,0,0,0,0,1:0,0,0,1
+Frage 11:
+--------
+Race Condition, da es keinen Lock außerhalb put() und get() und daher können mehrerer Consumer und Producer gleichzeitig darauf zugreifen.
