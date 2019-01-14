@@ -1,0 +1,4 @@
+Antworten zur Hw09
+==================
+
+6. Betrachtet man einen sehr großen z.B File-Server der von sehr vielen Clienten gleichzeitig genutzt wird, ist es sehr sinnvoll asynchron zu arbeiten. Kommen sehr viele Zugriffe, die Blockierend arbeiten, wäre die Performanz sehr beeinträchtigt und man könnte nicht richtig mit eben diesem Server arbeiten. Der Server müsste für den Zugriff alles brach legen und alles andere würde in einer Warteschlange anstehen. Allerdings ist dies auch mit großem Aufwand verbunden. Man muss die parallelisierung implementieren und auf kritische Sektoren achten. Ebenfalls müssten alle möglichen Fehler entsprechend abgefangen werden um ein abstürzen durch die hohe belastung, und somit hoher Parallelität, der Asynchronität zu vermeiden. Wiegt man allerdings die positiven und negativen Seiten gegeneinadner auf, werden die positiven Aspekte überwiegen.

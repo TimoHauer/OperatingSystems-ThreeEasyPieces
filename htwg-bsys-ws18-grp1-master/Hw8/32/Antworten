@@ -1,0 +1,26 @@
+1. Output ändert gar nicht.
+2. Ich habe nicht immer Deadlock bekommen, bis ich loop(-l) auf 1000000 eingesetzt habe.
+3. Deadlocks kommen immer an. Kein Deadlock taucht auf wenn -n 1 gesetzt wird.
+4. Die Locks werden immer in gleicher Reihenfolge angefragt deswegen kein Deadlock. Es reicht schon einmal den Lock zu holen wenn die 2 Locks derselbe sind.
+5. -t -n 2 -l 100000 -d hat 0,05s gedauert.
+Die Laufzeit steigt fast proportional mit der Loop und der Anzahl der Threads auf.
+6. Das Programm läuft schneller wenn -p gesetzt wird. Der Program läuft wenigsten doppel schneller wie ohne -p und noch mehr wenn die Anzahl der Threads steigt.
+7. Der erste trylock-Aufruf ist notwendig, ohne den kann das Programm nicht den Lock haben.
+Die Laufzeit ohne -p ist sehr variant, mal schneller als global oder mal langsamer, hängt von der Anzahl der Retries ab.
+Die Laufzeit mit -p ist gleich wie global oder.
+Mit -p ist Retries immer 0 wenn die Anzahl der Threads aufsteigt.
+Ohne -p:
+            Anzahl Threads                  Retries
+                2                           122707
+                3                           1264127
+                4                           2407310
+                5                           2831307
+                6                           4345401
+                7                           5652965
+8. Concurency ist das Hauptproblem, denn der Programmer muss genau wissen, mit welcher Reihenfolge die Locks akquiriert werden sollen. Dieser Ansatz ist langsamer als die andere mit oder ohne -p.
+9. Das Programm no lock funktioniert ohne Deadlock, da der Update-Befehl(Addieren zweier Vektoren) atomisch ist.
+10. Ohne -p:
+Mit kleiner Anzahl von Thread läuft no_lock langsamer als die andere, auch wenn die Anzahl der loops variiert. Mit gleicher Loops und groß genug Anzahl von Threads läuft no_lock schneller als avoid_hold_and_wait und try_wait aber immer noch langsamer als global_order.
+Mit -p:
+Ähnlich wie ohne p.
+unterschied: Mit gleicher Loops und groß genug Anzahl von Threads ist no_nock nur schneller als avoid_hold_and_wait.
