@@ -5,3 +5,5 @@ This public repository includes all coding-tasks of the Operating Systems: Three
 Maybe there are sum small bugs but it probably should work.
 
 If there are any questions, ask me. If you have some improvements you can fork this repo and create a pull-request.
+
+The answers are on german. So if you want to change this just rewrite them with ending EN and push them.
